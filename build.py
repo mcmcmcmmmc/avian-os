@@ -1,13 +1,25 @@
 from pathlib import Path
+import base64
 import re
 
 root = Path(__file__).resolve().parent
 html = (root / 'index.html').read_text()
-html = html.replace('<link rel="stylesheet" href="style.css">', '<style>' + (root / 'style.css').read_text() + '</style>')
-for name in ['engine.js', 'audio.js', 'render.js', 'app.js']:
-    script = (root / name).read_text().replace('</script', '<\\/script')
-    html = html.replace(f'<script src="{name}"></script>', f'<script>\n{script}\n</script>')
-out = root / '芦汀观测站.html'
+def style(match):
+    return '<style>' + (root / match.group(1).split('?')[0]).read_text() + '</style>'
+html = re.sub(r'<link rel="stylesheet" href="([^"]+)">', style, html)
+def script(match):
+    name=match.group(1).split('?')[0]
+    content=(root/name).read_text()
+    if name=='challenge-data.js':
+        for media in sorted((root/'assets/reference').glob('*')):
+            if media.suffix not in {'.jpg','.mp3'}: continue
+            mime='image/jpeg' if media.suffix=='.jpg' else 'audio/mpeg'
+            uri='data:'+mime+';base64,'+base64.b64encode(media.read_bytes()).decode()
+            content=content.replace(str(media.relative_to(root)),uri)
+    return '<script>\n'+content.replace('</script','<\\/script')+'\n</script>'
+html=re.sub(r'<script src="([^"]+)"></script>',script,html)
+assert not re.search(r'<script[^>]+src=|<link[^>]+href=',html)
+assert "image:'assets/reference/" not in html
+out=root/'芦汀观测站.html'
 out.write_text(html)
-assert not re.search(r'<script[^>]+src=|<link[^>]+href=', html)
-print(f'Built {out.name}: {out.stat().st_size:,} bytes; no external assets')
+print(f'Built {out.name}: {out.stat().st_size:,} bytes; photos and recordings embedded')

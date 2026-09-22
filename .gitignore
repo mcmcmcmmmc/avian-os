@@ -5,3 +5,5 @@ evidence/
 manifest.json
 *.zip
 芦汀观测站.html
+
+.firecrawl/
