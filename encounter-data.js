@@ -67,11 +67,18 @@ const scenes=[
 ];
 for(const c of scenes){c.family='leaf';c.options=options;c.sources=[{title:'香港观鸟会 · 形态、声音、行为与生境',url:'https://avifauna.hkbws.org.hk/species/0320/'+speciesPages[c.page]},...(c.id==='e06'?[]:[{title:'Wild Beijing · 北京出现季节',url:regional}])];c.mustHave=['sound','detail'];}
 scenes.push(...(typeof module==='object'&&module.exports?require('./encounter-expansion.js'):root.AvianEncounterExpansion));
-const allOptions=scenes.map(c=>c.answer);
-for(const c of scenes)c.options=c.family==='leaf'?options:allOptions;
+const bank=typeof module==='object'&&module.exports?require('./encounter-bank.js'):root.AvianEncounterBank;
+scenes.push(...bank.scenes);
+for(const c of scenes)c.track=c.track||(c.family==='leaf'?'leaf':'mixed');
+const tracks={
+ leaf:{label:'柳莺专练',short:'柳莺 9 种',description:'9 种柳莺 · 先听叫声，再核对冠纹、翼斑与动作。部分遭遇没有照片。'},
+ mixed:{label:'混合进阶',short:'混合 20 种',description:'20 种柳莺、蝗莺、树莺与鹨 · 先判断活动层次，再细分；有些遭遇只能保留两个候选。'},
+ ...bank.trackMeta
+};
+function pool(track){return track==='mixed'?scenes.filter(c=>c.track==='leaf'||c.track==='mixed'):scenes.filter(c=>c.track===track);}
+function choices(track){return pool(track).map(c=>c.answer);}
+for(const c of scenes)c.options=choices(c.track);
 const families={leaf:'柳莺',grass:'蝗莺',bush:'树莺',pipit:'鹨'};
-function pool(track){return scenes.filter(c=>track==='mixed'||c.family==='leaf');}
-function choices(track){return track==='mixed'?allOptions:options;}
 const labels={context:'地点与生境',sound:'声音',motion:'活动方式',form:'短暂目击',detail:'补充观察'};
 function begin(){return {seen:['context'],selected:[],hypotheses:[],predictions:[],submitted:false};}
 function addEvidence(state,key){if(!Object.hasOwn(labels,key))return false;if(state.seen.includes(key))return false;state.seen.push(key);return true;}
@@ -81,6 +88,6 @@ function assess(c,state,candidates,confidence){
  const required=c.resolutionCandidates||[c.answer];const exact=choices.length===required.length&&required.every(x=>choices.includes(x));const included=required.some(x=>choices.includes(x));
  return {candidates:choices,answer:choices.join(' / ')||'暂不定种',confidence,missing,correct:exact&&!missing.length,verdict:!choices.length?'open':missing.length?'incomplete':exact?'supported':included&&c.resolutionCandidates?'limited':included?'narrowed':'reconsider',overconfident:confidence==='high'&&(!exact||missing.length>0||!!c.resolutionCandidates)};
 }
-const api={scenes,labels,begin,addEvidence,saveHypothesis,assess,pool,choices,families,version:5};
+const api={scenes,labels,begin,addEvidence,saveHypothesis,assess,pool,choices,families,tracks,version:6};
 if(typeof module==='object'&&module.exports)module.exports=api;else root.AvianEncounters=api;
 })(globalThis);
