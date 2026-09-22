@@ -1,1 +1,1 @@
-{"name":"avian-os","version":"0.3.0","private":true,"description":"Field identification challenges and a wetland observation game","scripts":{"test":"python3 build.py && node --test tests/*.test.cjs","build":"python3 build.py","start":"python3 serve.py"}}
+{"name":"avian-os","version":"0.4.0","private":true,"description":"Field identification challenges and a wetland observation game","scripts":{"test":"python3 build.py && node --test tests/*.test.cjs","build":"python3 build.py","start":"python3 serve.py"}}

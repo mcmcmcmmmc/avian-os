@@ -61,3 +61,42 @@
 本地 Firecrawl 完成 Commons 目录与北京地区名录检索、正文和内嵌表读取。eBird 物种页遇到反爬，未把挑战页当作成功的鉴别资料；后续普通网页检索补充了上述组织与期刊来源。没有调用 Firecrawl Cloud。图片通过 Commons API 取得文件、作者与许可元数据。私人测试结果、检索缓存与下载候选不提交公开仓库。
 
 每张照片的“可见/不可靠”文字是实现者读图后撰写的练习注释，尚无鸟类专家逐题复核。进阶模式只记录候选是否包含来源标签，不伪造准确率、置信概率或已经完成野外定种的判断。`correct`、`calibrated` 为 `null`，`confidenceReview` 只表示需复核高把握，不表示判断必错。
+
+
+## v0.4 资料驱动的虚构遭遇（2026-09-22）
+
+本版得到用户明确授权，将资料支持的特征与习性编成多信息遭遇；不再把“未随这张照片记录”当作不能编写情境的理由。精确地点、日期时刻、天气温度、数量、活动高度、目击与移动顺序是虚构。照片与录音是来自不同个体和地点的真实参考；没有冒充同时采集，也没有修改照片来补画关键形态。
+
+### 资料到情境的映射
+
+| 场景 | 资料支持的范围 | 编写的情境与边界 |
+|---|---|---|
+| e01 黄眉 | [香港观鸟会](https://avifauna.hkbws.org.hk/species/0320/037900)：头翼特征、上扬双音节声、林冠下与灌丛觅食 | 北京温榆河 9/23 清晨；具体温度、高度与目击虚构。德国参考声音不是北京实录 |
+| e02 黄腰 | [香港观鸟会](https://avifauna.hkbws.org.hk/species/0320/038100)：冠纹、腰斑、鼻音与悬停取食 | 北京奥森 10/22；编写一次悬停时的腰斑目击，不宣称源照片拍到了此动作 |
+| e03 褐 | [香港观鸟会](https://avifauna.hkbws.org.hk/species/0320/038400)：湿处低植被、隐蔽而不停移动、硬短声、纤细嘴腿 | 北京沙河 9/19；数量与移动经过虚构，不套用香港的冬季丰度 |
+| e04 巨嘴 | [香港观鸟会](https://avifauna.hkbws.org.hk/species/0320/038300)：嘴腿、眉纹、柔和鼻音及较大范围换位 | 北京温榆河 9/24；编写从一丛飞到另一丛的具体经过，不视为专属行为 |
+| e05 极北 | [香港观鸟会](https://avifauna.hkbws.org.hk/species/0320/040100)：树冠慢速觅食、短粗糙叫声与颤鸣；翼形参照上一版 Dutch Birding 来源 | 北京奥森 5/19；参考含叫声与鸣唱，保留全段；六选项不覆盖整个复合群 |
+| e06 淡眉 | [香港观鸟会](https://avifauna.hkbws.org.hk/species/0320/037800)：与黄眉接近，指名和 mandellii 声音不同；Commons 实录来自印度南迪山 | 印度班加罗尔附近 1/16；采用当地录音作为重组参考，未把它当作北京 mandellii 标准 |
+
+北京出现月份沿用本轮已读取的 [Wild Beijing 地区状态表](https://wildbeijing.org/status-of-the-birds-of-beijing-interactive/)（页面最近更新 2026-09-10，上一版保存的同日快照）。地区名录用于相容性约束，不生成定种概率。资料描述经概括转写；原站照片未复制，游戏图片仍采用现有 Commons 许可素材。
+
+### 新增真实声音与许可
+
+- `e02` — [XC750002 Pallas's Leaf Warbler (Phylloscopus proregulus)](https://xeno-canto.org/750002)；Geoff Carey；[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)；文件 `assets/reference/e02-audio.mp3`；18.00 秒。截取开头最多18秒，转为MP3并做响度归一化与短淡入淡出；不改变音高或节奏。保留原许可。仅供非商业使用。
+- `e03` — [XC750688 Dusky Warbler (Phylloscopus fuscatus)](https://xeno-canto.org/750688)；Geoff Carey；[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)；文件 `assets/reference/e03-audio.mp3`；12.98 秒。截取开头最多18秒，转为MP3并做响度归一化与短淡入淡出；不改变音高或节奏。保留原许可。仅供非商业使用。
+- `e04` — [XC750628 Radde's Warbler (Phylloscopus schwarzi)](https://xeno-canto.org/750628)；Geoff Carey；[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)；文件 `assets/reference/e04-audio.mp3`；18.00 秒。截取开头最多18秒，转为MP3并做响度归一化与短淡入淡出；不改变音高或节奏。保留原许可。仅供非商业使用。
+- `e05` — [XC753456 Arctic Warbler (Phylloscopus borealis)](https://xeno-canto.org/753456)；Geoff Carey；[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)；文件 `assets/reference/e05-audio.mp3`；55.13 秒。保留完整录音，转为MP3并做响度归一化与短淡入淡出；不改变音高或节奏。保留原许可。仅供非商业使用。
+- `e01` — [File:Phylloscopus inornatus - Yellow-browed Warbler XC153463.mp3](https://commons.wikimedia.org/wiki/File:Phylloscopus_inornatus_-_Yellow-browed_Warbler_XC153463.mp3)；Luis Ramos；[CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0)；文件 `assets/reference/e01-audio.mp3`；5.60 秒。截取开头最多18秒，转为MP3并做响度归一化与短淡入淡出；不改变音高或节奏。保留原许可。
+- `e06` — [File:Humes warbler nandi.ogg](https://commons.wikimedia.org/wiki/File:Humes_warbler_nandi.ogg)；Shyamal L.；[CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0)；文件 `assets/reference/e06-audio.mp3`；18.00 秒。截取开头最多18秒，转为MP3并做响度归一化与短淡入淡出；不改变音高或节奏。保留原许可。
+
+
+四段 Xeno-canto 音源通过香港观鸟会对应物种页所引用的公开播放器核对鸟种、声音类型、作者、地区与许可，再从站点公开下载端点取得。播放器分别为 [XC750002](https://xeno-canto.org/750002/embed)、[XC750688](https://xeno-canto.org/750688/embed)、[XC750628](https://xeno-canto.org/750628/embed)、[XC753456](https://xeno-canto.org/753456/embed)。它们均为 CC BY-NC-SA 4.0，处理后音轨继续遵守同一许可，只作非商业分享。其他两个 Commons 音源保留自己的 CC BY-SA 许可。编码调整和响度处理没有生成或改变鸟鸣音高、节奏；首尾做极短淡入淡出以防爆音。
+
+### 没有采用的候选与抓取限制
+
+- Commons 的 XC129319 褐柳莺音源原作者写明自己未见鸟且不确定物种；不作为本关确定答案的声音。
+- XC594446 极北柳莺采用 CC BY-NC-ND 4.0，未将其截取加工发布，改用允许衍生处理的 XC753456。
+- 搜索摘要将 XC803141 混排为另一位作者的叫声，但公开播放器实际上标为 Oriental Stork、北京、鸣唱；未以搜索摘要充当元数据，也未把这段发布进游戏。
+- Xeno-canto 详情页的本地抓取与浏览器访问遇到反爬；使用该站允许返回的公开嵌入播放器核对署名、许可和类型。未使用 Firecrawl Cloud。研究临时文件及未采用录音不提交仓库或离线包。
+
+界面每关均保留素材作者、原始链接、许可与处理说明。录音作者和物种资料来源并未背书本项目的虚构地点、观察顺序或评分规则。声音文字辅助单独记作文字渠道，不谎称用户实际听到了录音。
