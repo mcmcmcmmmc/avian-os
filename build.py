@@ -10,7 +10,7 @@ html = re.sub(r'<link rel="stylesheet" href="([^"]+)">', style, html)
 def script(match):
     name=match.group(1).split('?')[0]
     content=(root/name).read_text()
-    if name=='challenge-data.js':
+    if name in {'challenge-data.js','advanced-data.js'}:
         for media in sorted((root/'assets/reference').glob('*')):
             if media.suffix not in {'.jpg','.mp3'}: continue
             mime='image/jpeg' if media.suffix=='.jpg' else 'audio/mpeg'
