@@ -1,6 +1,6 @@
 (function(root){
 'use strict';
-const options=['黄眉柳莺','淡眉柳莺','黄腰柳莺','褐柳莺','巨嘴柳莺','极北柳莺'];
+const options=['黄眉柳莺','淡眉柳莺','黄腰柳莺','褐柳莺','巨嘴柳莺','极北柳莺','冕柳莺','冠纹柳莺','双斑绿柳莺'];
 const regional='https://wildbeijing.org/status-of-the-birds-of-beijing-interactive/';
 const speciesPages={yellow:'037900',hume:'037800',pallas:'038100',dusky:'038400',radde:'038300',arctic:'040100'};
 const scenes=[
@@ -22,7 +22,7 @@ const scenes=[
  target:'canopy',prediction:'下一次悬停很可能仍在枝端附近。守住树冠外缘的空隙，有机会看见平时被翅膀挡住的腰。',
  detail:'在一次短暂悬停中，腰部出现淡黄斑；落回枝头时，你又看到中央浅冠纹和两道翼斑。',
  reason:'本场景的关键是冠纹、淡黄腰斑、悬停行为和鼻音叫声相互支持。悬停不是它独有的动作，单独使用会误判。',
- contrasts:[['黄眉柳莺','也有眉纹与翼斑，但这次额外目击的中央冠纹和腰斑组合不支持它。'],['云南柳莺（题外）','现实中也要考虑这类近亲；本关是六候选内的综合练习，不是完备的野外排除法。']],
+ contrasts:[['黄眉柳莺','也有眉纹与翼斑，但这次额外目击的中央冠纹和腰斑组合不支持它。'],['云南柳莺（题外）','现实中也要考虑这类近亲；本关是候选内的综合练习，不是完备的野外排除法。']],
  facts:'常快速觅食，较常悬停取食；中央冠纹与淡黄腰斑有辨认价值；叫声有鼻音、尾段上扬。北京晚九月至十一月初有秋季过境。'},
  {id:'e03',title:'水边，像小石子轻碰',area:'北京 · 沙河水库支渠',date:'9 月 19 日',time:'16:38',weather:'多云 · 21°C · 西北微风',habitat:'浅水边的草丛、芦苇与低矮柳灌丛',count:'暂见 1 只，未能数清隐蔽处个体',height:'离地约 0.3–1 米',kind:'low',answer:'褐柳莺',latin:'Phylloscopus fuscatus',page:'dusky',photo:'assets/reference/w04.jpg',audio:'assets/reference/e03-audio.mp3',
  opening:'你站在渠边等了一会儿。低处传来几下短声，草茎之间有褐色影子来回钻动，没有停在显眼的高枝上。',
@@ -32,7 +32,7 @@ const scenes=[
  target:'low',prediction:'守住低灌丛里的一个空隙，镜头不要跟着背景树梢的动静向上抬。',
  detail:'等它穿过草茎空隙时，嘴较细、腿也较纤细；眉纹在眼前较白而清楚，后方较暗淡。硬短叫声继续从同一位置发出。',
  reason:'湿地低植被与钻行只缩小范围；细嘴、细腿、眉纹前后对比和硬短叫声才共同支持本关的褐柳莺。',
- contrasts:[['巨嘴柳莺','通常更结实，嘴与腿较粗；眉纹前后对比及较软的鼻音也值得比较。'],['棕眉柳莺（题外）','北京也有记录；真实野外不要以“没有在六选项里”将其排除。']],
+ contrasts:[['巨嘴柳莺','通常更结实，嘴与腿较粗；眉纹前后对比及较软的鼻音也值得比较。'],['棕眉柳莺（题外）','北京也有记录；真实野外不要以“没有在候选选项里”将其排除。']],
  facts:'偏好湿处附近的植被；常在低灌丛中活动、隐蔽而不停移动；叫声硬而短。北京春秋过境。'},
  {id:'e04',title:'同样是褐色，却换了位置',area:'北京 · 温榆河灌丛带',date:'9 月 24 日',time:'09:24',weather:'阴转晴 · 18°C · 微风',habitat:'林缘灌丛与稍干的草坡，不在开阔水面',count:'单独追踪 1 只',height:'离地约 0.5–2 米',kind:'low',answer:'巨嘴柳莺',latin:'Phylloscopus schwarzi',page:'radde',photo:'assets/reference/w05.jpg',audio:'assets/reference/e04-audio.mp3',
  opening:'这只小鸟比你刚才遇到的更难跟。灌丛动了一阵，它忽然横穿到另一丛，只留下了正面的一瞥。',
@@ -51,7 +51,7 @@ const scenes=[
  motion:'它沿树冠枝叶较慢地搜寻，时而探向叶背取食，没有像另一类小柳莺那样频繁地短悬停。',
  target:'canopy',prediction:'把视线移到树冠外缘的横枝上，等待它沿枝慢慢走到较少遮挡的位置。',
  detail:'侧面停顿时，初级飞羽向外突出较长；眉纹长而明显。你又记录到同样短而带沙哑感的叫声。',
- reason:'这组模拟线索在本关六候选中支持极北柳莺。现实定种还要排除复合群的近亲；这段参考录音不表示所有种群都发出完全相同的声音。',
+ reason:'这组模拟线索在本关候选中支持极北柳莺。现实定种还要排除复合群的近亲；这段参考录音不表示所有种群都发出完全相同的声音。',
  contrasts:[['黄眉柳莺','要综合体形、翼形与声调比较，不能只看到浅眉纹就归到同一类。'],['堪察加/日本柳莺（题外）','真实识别需要更细的声音与形态核对；本关没有穷尽复合群的全部候选。']],
  facts:'在有遮蔽的林木或灌丛停留；常在树冠较慢觅食；短而带蜂鸣感的叫声可辅助鉴别。北京五月为春季过境时段。'},
  {id:'e06',title:'南方山林里的另一种声音',area:'印度 · 班加罗尔附近山林',date:'1 月 16 日',time:'08:18',weather:'晴 · 17°C · 林间弱风',habitat:'冬季山林步道旁的树木与灌丛',count:'正在跟踪 1 只，林中还有背景鸟声',height:'约 2–5 米',kind:'canopy',answer:'淡眉柳莺',latin:'Phylloscopus humei',page:'hume',photo:'assets/reference/w09.jpg',audio:'assets/reference/e06-audio.mp3',
@@ -65,16 +65,22 @@ const scenes=[
  contrasts:[['黄眉柳莺','灰绿照片不足以排除它；比较清楚的翼斑、嘴腿和典型上扬双音节叫声。'],['mandellii 种群','常被叫作淡眉，但叫声与指名种群不同。地理范围在这里约束的是参考声音的适用性。']],
  facts:'淡眉与黄眉外形接近；指名种群和 mandellii 声音存在差异；应结合嘴腿、翼斑与声音。本关地点为配合印度参考录音而编写。'}
 ];
-for(const c of scenes){c.options=options;c.sources=[{title:'香港观鸟会 · 形态、声音、行为与生境',url:'https://avifauna.hkbws.org.hk/species/0320/'+speciesPages[c.page]},...(c.id==='e06'?[]:[{title:'Wild Beijing · 北京出现季节',url:regional}])];c.mustHave=['sound','detail'];}
+for(const c of scenes){c.family='leaf';c.options=options;c.sources=[{title:'香港观鸟会 · 形态、声音、行为与生境',url:'https://avifauna.hkbws.org.hk/species/0320/'+speciesPages[c.page]},...(c.id==='e06'?[]:[{title:'Wild Beijing · 北京出现季节',url:regional}])];c.mustHave=['sound','detail'];}
+scenes.push(...(typeof module==='object'&&module.exports?require('./encounter-expansion.js'):root.AvianEncounterExpansion));
+const allOptions=scenes.map(c=>c.answer);
+for(const c of scenes)c.options=c.family==='leaf'?options:allOptions;
+const families={leaf:'柳莺',grass:'蝗莺',bush:'树莺',pipit:'鹨'};
+function pool(track){return scenes.filter(c=>track==='mixed'||c.family==='leaf');}
+function choices(track){return track==='mixed'?allOptions:options;}
 const labels={context:'地点与生境',sound:'声音',motion:'活动方式',form:'短暂目击',detail:'补充观察'};
 function begin(){return {seen:['context'],selected:[],hypotheses:[],predictions:[],submitted:false};}
 function addEvidence(state,key){if(!Object.hasOwn(labels,key))return false;if(state.seen.includes(key))return false;state.seen.push(key);return true;}
 function saveHypothesis(state,candidates,confidence){const entry={candidates:[...candidates],confidence,seen:[...state.seen],step:state.hypotheses.length+1};state.hypotheses.push(entry);return entry;}
 function assess(c,state,candidates,confidence){
  const choices=[...new Set(candidates.filter(x=>c.options.includes(x)))];const missing=c.mustHave.filter(k=>!state.seen.includes(k));
- const exact=choices.length===1&&choices[0]===c.answer;const included=choices.includes(c.answer);
- return {candidates:choices,answer:choices.join(' / ')||'暂不定种',confidence,missing,correct:exact&&!missing.length,verdict:!choices.length?'open':missing.length?'incomplete':exact?'supported':included?'narrowed':'reconsider',overconfident:confidence==='high'&&(!exact||missing.length>0)};
+ const required=c.resolutionCandidates||[c.answer];const exact=choices.length===required.length&&required.every(x=>choices.includes(x));const included=required.some(x=>choices.includes(x));
+ return {candidates:choices,answer:choices.join(' / ')||'暂不定种',confidence,missing,correct:exact&&!missing.length,verdict:!choices.length?'open':missing.length?'incomplete':exact?'supported':included&&c.resolutionCandidates?'limited':included?'narrowed':'reconsider',overconfident:confidence==='high'&&(!exact||missing.length>0||!!c.resolutionCandidates)};
 }
-const api={scenes,labels,begin,addEvidence,saveHypothesis,assess,version:4};
+const api={scenes,labels,begin,addEvidence,saveHypothesis,assess,pool,choices,families,version:5};
 if(typeof module==='object'&&module.exports)module.exports=api;else root.AvianEncounters=api;
 })(globalThis);

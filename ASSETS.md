@@ -4,7 +4,7 @@
 
 ## 影像与录音
 
-所有媒体保留其各自许可；缩略图由 Wikimedia 提供。图片按视窗适配显示，未修改鸟类鉴别特征；录音文件未剪辑，界面仅限制每次播放最长 12 秒。该限制不改变文件本身。
+所有媒体保留其各自许可；缩略图由 Wikimedia 提供。图片按视窗适配显示，未修改鸟类鉴别特征；旧辨认练习的录音文件未剪辑，界面仅限制每次播放最长 12 秒。v0.4/v0.5 遭遇模式按下方各文件记录处理；禁止改编的录音保留完整原文件。
 
 | 案例 / 类型 | 作者 | 许可 | 原始文件 |
 | --- | --- | --- | --- |
@@ -100,3 +100,30 @@
 - Xeno-canto 详情页的本地抓取与浏览器访问遇到反爬；使用该站允许返回的公开嵌入播放器核对署名、许可和类型。未使用 Firecrawl Cloud。研究临时文件及未采用录音不提交仓库或离线包。
 
 界面每关均保留素材作者、原始链接、许可与处理说明。录音作者和物种资料来源并未背书本项目的虚构地点、观察顺序或评分规则。声音文字辅助单独记作文字渠道，不谎称用户实际听到了录音。
+
+## v0.5 · 新增14份参考录音
+
+新增遭遇不使用照片：举镜显示依资料编写的局部目击文字，环境和动静是通用示意。并未把缺图替换成其他物种图片。
+
+以下录音各自遵循原许可，均含非商业限制。两份 ND 文件原字节复制，SHA-256 与原件相同；其余截取开头最多24秒、转MP3并归一化，不改音高节奏，衍生文件保留原许可。
+
+| 遭遇 | 原始录音 | 作者 | 许可 | 长度 | 处理 |
+| --- | --- | --- | --- | --- | --- |
+| e07 | [XC750911 Eastern Crowned Warbler (Phylloscopus coronatus)](https://xeno-canto.org/750911) | Geoff Carey | [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) | 13.8 秒 | 剪辑/归一化 |
+| e08 | [XC183391 Claudia's Leaf Warbler (Phylloscopus claudiae)](https://xeno-canto.org/183391) | Frank Lambert | [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/) | 84.65 秒 | 完整原文件，未改编 |
+| e09 | [XC752830 Two-barred Warbler (Phylloscopus plumbeitarsus)](https://xeno-canto.org/752830) | Geoff Carey | [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) | 22.06 秒 | 剪辑/归一化 |
+| e10 | [XC756361 Pallas's Grasshopper Warbler (Helopsaltes certhiola)](https://xeno-canto.org/756361) | Geoff Carey | [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) | 24 秒 | 剪辑/归一化 |
+| e11 | [XC757067 Chinese Bush Warbler (Locustella tacsanowskia)](https://xeno-canto.org/757067) | Geoff Carey | [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) | 24 秒 | 剪辑/归一化 |
+| e12 | [XC395914 Lanceolated Warbler (Locustella lanceolata)](https://xeno-canto.org/395914) | Jarmo Pirhonen | [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) | 24 秒 | 剪辑/归一化 |
+| e13 | [XC757073 Baikal Bush Warbler (Locustella davidi)](https://xeno-canto.org/757073) | Geoff Carey | [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) | 24 秒 | 剪辑/归一化 |
+| e14 | [XC748796 Asian Stubtail (Urosphena squameiceps)](https://xeno-canto.org/748796) | Geoff Carey | [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) | 24 秒 | 剪辑/归一化 |
+| e15 | [XC731529 Olive-backed Pipit (Anthus hodgsoni yunnanensis)](https://xeno-canto.org/731529) | Geoff Carey | [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) | 16.51 秒 | 剪辑/归一化 |
+| e16 | [XC162596 Blyth's Pipit (Anthus godlewskii)](https://xeno-canto.org/162596) | Patrick Franke | [CC BY-NC-SA 3.0](https://creativecommons.org/licenses/by-nc-sa/3.0/) | 8.76 秒 | 剪辑/归一化 |
+| e17 | [XC731290 Richard's Pipit (Anthus richardi)](https://xeno-canto.org/731290) | Geoff Carey | [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) | 10.03 秒 | 剪辑/归一化 |
+| e18 | [XC435101 Water Pipit (Anthus spinoletta blakistoni)](https://xeno-canto.org/435101) | Patrick Franke | [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/) | 2.04 秒 | 完整原文件，未改编 |
+| e19 | [XC731785 Red-throated Pipit (Anthus cervinus)](https://xeno-canto.org/731785) | Geoff Carey | [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) | 13.7 秒 | 剪辑/归一化 |
+| e20 | [XC622932 Buff-bellied Pipit (Anthus rubescens japonicus)](https://xeno-canto.org/622932) | Jens Kirkeby | [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) | 12.14 秒 | 剪辑/归一化 |
+
+逐项原始地点、录音声型、校验值见 credits.json 和游戏素材署名。树鹨录音档案标注 yunnanensis；黄腹鹨档案沿用 rubescens japonicus。物种参考音不代表虚构北京地点、时刻的原始实录，也不是所有种群的标准声型。
+
+鉴别资料主要取自 [香港观鸟会](https://avifauna.hkbws.org.hk/species)，冠纹柳莺另用 [Cornell eBird](https://ebird.org/species/clalew1)。北京季节性来自 [Wild Beijing 记录表](https://wildbeijing.org/status-of-the-birds-of-beijing-interactive/)；“田鹨 = Anthus richardi”核对 [北京市园林绿化局名录](https://yllhj.beijing.gov.cn/ztxx/ysdw/ml/202504/t20250422_4071634.shtml)。香港的地区常见度不搬到北京使用。
