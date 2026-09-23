@@ -39,7 +39,7 @@ function controls(){
 function mark(key){if(state.submitted)return;D.addEvidence(state,key);clues();}
 function credits(){
  const media=(window.AvianMediaCredits||[]).filter(m=>m.file===c.photo||m.file===c.audio);
- $('enc-credits').innerHTML=media.length?media.map(m=>`<p><b>${m.type==='audio'?'真实参考录音':'真实参考照片'}</b> · ${esc(m.author)} · <a href="${m.licenseUrl||m.source}" target="_blank" rel="noopener noreferrer">${esc(m.license)}</a><br><a href="${m.source}" target="_blank" rel="noopener noreferrer">原始档案（含鸟名）</a><br>${esc(m.change)}${m.type==='audio'?'<br>'+esc(m.description):''}</p>`).join(''):'<p>本题尚未收录可公开复用的单物种录音或照片。声音线索是依据资料编写的现场听记，不伪装成真实播放素材。</p>';
+ $('enc-credits').innerHTML=media.length?media.map(m=>`<p><b>${m.type==='audio'?'真实参考录音':m.generated?'AI 生成教学插图（非真实目击照片）':'真实参考照片'}</b> · ${esc(m.author)} · ${m.licenseUrl?`<a href="${m.licenseUrl}" target="_blank" rel="noopener noreferrer">${esc(m.license)}</a>`:esc(m.license)}<br><a href="${m.source}" target="_blank" rel="noopener noreferrer">${m.generated?'用于特征核对的资料':'原始档案（含鸟名）'}</a><br>${esc(m.change)}${m.type==='audio'?'<br>'+esc(m.description):''}</p>`).join(''):'<p>本题尚未收录可公开复用的单物种录音或照片。声音线索是依据资料编写的现场听记，不伪装成真实播放素材。</p>';
 }
 function load(n){
  stopSound();idx=(n+D.scenes.length)%D.scenes.length;const source=D.scenes[idx];if(!D.pool(track).includes(source))track=source.track;c={...source,options:D.choices(track)};state=D.begin();motionUntil=0;

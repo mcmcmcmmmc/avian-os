@@ -68,7 +68,8 @@ const scenes=[
 for(const c of scenes){c.family='leaf';c.options=options;c.sources=[{title:'香港观鸟会 · 形态、声音、行为与生境',url:'https://avifauna.hkbws.org.hk/species/0320/'+speciesPages[c.page]},...(c.id==='e06'?[]:[{title:'Wild Beijing · 北京出现季节',url:regional}])];c.mustHave=['sound','detail'];}
 scenes.push(...(typeof module==='object'&&module.exports?require('./encounter-expansion.js'):root.AvianEncounterExpansion));
 const bank=typeof module==='object'&&module.exports?require('./encounter-bank.js'):root.AvianEncounterBank;
-scenes.push(...bank.scenes);
+const encounterMedia=typeof module==='object'&&module.exports?require('./encounter-media.js'):root.AvianEncounterMedia||{};
+scenes.push(...bank.scenes.map(scene=>encounterMedia[scene.id]?{...scene,...encounterMedia[scene.id]}:scene));
 for(const c of scenes)c.track=c.track||(c.family==='leaf'?'leaf':'mixed');
 const tracks={
  leaf:{label:'柳莺专练',short:'柳莺 9 种',description:'9 种柳莺 · 先听叫声，再核对冠纹、翼斑与动作。部分遭遇没有照片。'},
@@ -88,6 +89,6 @@ function assess(c,state,candidates,confidence){
  const required=c.resolutionCandidates||[c.answer];const exact=choices.length===required.length&&required.every(x=>choices.includes(x));const included=required.some(x=>choices.includes(x));
  return {candidates:choices,answer:choices.join(' / ')||'暂不定种',confidence,missing,correct:exact&&!missing.length,verdict:!choices.length?'open':missing.length?'incomplete':exact?'supported':included&&c.resolutionCandidates?'limited':included?'narrowed':'reconsider',overconfident:confidence==='high'&&(!exact||missing.length>0||!!c.resolutionCandidates)};
 }
-const api={scenes,labels,begin,addEvidence,saveHypothesis,assess,pool,choices,families,tracks,version:6};
+const api={scenes,labels,begin,addEvidence,saveHypothesis,assess,pool,choices,families,tracks,version:7};
 if(typeof module==='object'&&module.exports)module.exports=api;else root.AvianEncounters=api;
 })(globalThis);
